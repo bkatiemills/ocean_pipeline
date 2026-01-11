@@ -22,7 +22,7 @@ df[[args.variable+'_interpolation', 'flag']] = df.apply(
     axis=1
 )
 # dump any rows that failed to interpolate
-rejects = df[df[variable+'_interpolation'].apply(lambda x: numpy.isnan(x[0]) )].reset_index(drop=True)
+rejects = df[df[args.variable+'_interpolation'].apply(lambda x: numpy.isnan(x[0]) )].reset_index(drop=True)
 rejects = rejects[['float', 'cycle', 'longitude', 'latitude', 'juld', 'flag']]
 df = df[~df[args.variable+'_interpolation'].apply(lambda x: numpy.isnan(x[0]) )].reset_index(drop=True)
 
