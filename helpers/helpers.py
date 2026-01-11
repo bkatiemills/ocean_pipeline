@@ -271,7 +271,7 @@ def choose_profile(group):
     return group.iloc[preferred]
 
 def merge_qc(qc_lists):
-    if len(qc_lists[0] > 0):
+    if len(qc_lists[0]) > 0:
         return [max(column) for column in zip(*qc_lists)]
     else:
         return []
